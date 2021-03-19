@@ -1,32 +1,46 @@
 import React from 'react';
+import PropTypes from 'prop-types'
+//  Debemos colocar como parametro props(es un objeto donde se encuentran todas
+//  las propiedades que yo le he pasado al momento de imprimir el componente).
+// Como "props" es donde almacenan todas las propiedades a props le voy a pedir la 
+// propiedad image,title y price ej {props.image}
+const Curso = ({image,title,price,profesor}) => (
+  <>
 
-const Curso = () => (
-    <> 
-    
-        <article className="card">
-          <div className="img-container s-ratio-16-9 s-radius-tr s-radius-tl">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRoUKXam27L0mU8knYPyioPz8DJ1mJsfDLu0A&usqp=CAU" alt="" />
-          </div>
-          <div className="card__data s-border s-radius-br s-radius-bl s-pxy-2">
-            <h3 className="t5 s-mb-2 s-center">
-              Programación orientada a objetos con Go
-    </h3>
-            <div className="s-mb-2 s-main-center">
-              <div className="card__teacher s-cross-center">
-                <div className="card__avatar s-mr-1">
-                  <div className="circle img-container">
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTgfNfmjd8ZthLLSFsVStn8GY4uIn_Mnisvuw&usqp=CAU" alt="" />
-                  </div>
-                </div>
-                <span className="small">Alexys Lozada</span>
-              </div>
-            </div>
-            <div className="s-main-center">
-              <a className="button--ghost-alert button--tiny" href="#">$ 20USD</a>
-            </div>
-          </div>
-        </article>
-    </>
+    <article className="card">
+      <div className="img-container s-ratio-16-9 s-radius-tr s-radius-tl">
+        <img src={image} alt={title} />
+      </div>
+      <div className="card__data s-border s-radius-br s-radius-bl s-pxy-2">
+        <h3 className="center">
+          {title}
+        </h3>
+        <div className="s-main-center">
+        {`Profesora ${profesor}` }
+        </div>
+
+          <div className="s-main-center">
+          <a className="button--ghost-alert button--tiny" href="#">{price}</a>
+        </div>
+      </div>
+    </article>
+  </>
 )
+
+Curso.propTypes = {
+  title: PropTypes.string,
+  image: PropTypes.string,
+  price: PropTypes.number,
+  profesor: PropTypes.string
+}
+
+Curso.defaultProps ={
+  title: "No se encontró titulo",
+  image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQC3Vg57McPdxdRHOoxSQqjo1JJZWE-wpO4wg&usqp=CAU",
+  price: "--",
+  profesor: " "
+}
+
+
 
 export default Curso
