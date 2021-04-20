@@ -1,6 +1,14 @@
 .buttonss{
-    background-color: white;
-    color: green;
+    background-color:green;
+    color: white;
     width: 30%;
     height: 1cm;
+}
+.text {
+    font-size: 200%;
+    color: black;
+}
+.banner {
+    display:flex;
+    justify-content: center;
 }

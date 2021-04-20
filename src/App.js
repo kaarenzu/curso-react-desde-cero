@@ -1,21 +1,19 @@
 import React from 'react';
 import "./styles/styles.scss"
-import "./styles/css.css"
 import Banner from './Banner'
+// import Formulario from './Formulario'
+// import CourseGrid from './CourseGrid';
+
 
 function App() {
   return (
     <>
     <Banner />
-    
-
-      <div className="ed-grid m-grid-3"> 
-
+  
+{/*   
+      <Formulario name="Karen"/>
+      <CourseGrid /> */}
       
-      </div>
-
-   
-     
     </>
 
 
