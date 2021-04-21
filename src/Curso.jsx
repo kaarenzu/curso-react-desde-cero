@@ -1,15 +1,19 @@
 import React from 'react';
 import PropTypes from 'prop-types'
+import {Link} from 'react-router-dom'
+
 //  Debemos colocar como parametro props(es un objeto donde se encuentran todas
 //  las propiedades que yo le he pasado al momento de imprimir el componente).
 // Como "props" es donde almacenan todas las propiedades a props le voy a pedir la 
 // propiedad image,title y price ej {props.image}
-const Curso = ({image,title,price,profesor}) => (
+const Curso = ({ id ,image,title,price,profesor}) => (
   <>
 
     <article className="card">
       <div className="img-container s-ratio-16-9 s-radius-tr s-radius-tl">
+        <Link to={`/cursos/${id}`}>
         <img src={image} alt={title} />
+        </Link>
       </div>
       <div className="card__data s-border s-radius-br s-radius-bl s-pxy-2">
         <h3 className="center">
@@ -28,13 +32,15 @@ const Curso = ({image,title,price,profesor}) => (
 )
 
 Curso.propTypes = {
+  id:PropTypes.number,
   title: PropTypes.string,
   image: PropTypes.string,
-  price: PropTypes.number,
+  price: PropTypes.string,
   profesor: PropTypes.string
 }
 
 Curso.defaultProps ={
+  id:1,
   title: "No se encontró titulo",
   image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQC3Vg57McPdxdRHOoxSQqjo1JJZWE-wpO4wg&usqp=CAU",
   price: "--",

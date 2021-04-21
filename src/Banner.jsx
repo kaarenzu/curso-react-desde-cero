@@ -10,7 +10,7 @@ const Banner = () => (
               <p className="t2 s-mb-0">Bienvenido a FIF TECH</p>
               <br/>
               <p> Comienza a trabajar con nosotros</p>
-              <button className= "buttons">Postula Aquí</button>
+              <button className= "button s-mr-2 s-mb-2 m-mb-0">Postula Aquí</button>
             </div>
           </div>
         </div>
