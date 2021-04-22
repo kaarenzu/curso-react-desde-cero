@@ -6,7 +6,7 @@ import {Link} from 'react-router-dom'
 //  las propiedades que yo le he pasado al momento de imprimir el componente).
 // Como "props" es donde almacenan todas las propiedades a props le voy a pedir la 
 // propiedad image,title y price ej {props.image}
-const Curso = ({ id ,image,title,price,profesor}) => (
+const CourseCard = ({ id ,image,title,price,professor}) => (
   <>
 
     <article className="card">
@@ -20,7 +20,7 @@ const Curso = ({ id ,image,title,price,profesor}) => (
           {title}
         </h3>
         <div className="s-main-center">
-        {`Profesora ${profesor}` }
+        {`professora ${professor}` }
         </div>
 
           <div className="s-main-center">
@@ -31,22 +31,22 @@ const Curso = ({ id ,image,title,price,profesor}) => (
   </>
 )
 
-Curso.propTypes = {
+CourseCard.propTypes = {
   id:PropTypes.number,
   title: PropTypes.string,
   image: PropTypes.string,
   price: PropTypes.string,
-  profesor: PropTypes.string
+  professor: PropTypes.string
 }
 
-Curso.defaultProps ={
+CourseCard.defaultProps ={
   id:1,
   title: "No se encontró titulo",
   image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQC3Vg57McPdxdRHOoxSQqjo1JJZWE-wpO4wg&usqp=CAU",
   price: "--",
-  profesor: " "
+  professor: " "
 }
 
 
 
-export default Curso
+export default CourseCard
